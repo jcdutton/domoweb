@@ -31,7 +31,7 @@ Implements
 @license: GPL(v3)
 @organization: Domogik
 """
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from tastypie.authentication import Authentication

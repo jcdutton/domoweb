@@ -32,7 +32,7 @@ Implements
 @organization: Domogik
 """
 
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 
 urlpatterns = patterns('domoweb.config.views',
     url(r'^$', 'config_welcome', name="config_index_view"),

@@ -33,7 +33,7 @@ Implements
 """
 
 from django.http import HttpResponse
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from django.conf import settings
 from manifesto.views import ManifestView
 
