@@ -69,19 +69,19 @@
 
 {% block body %}
     <header id="mainheader">
-        <a href="{% url index_view %}" id="logo"><img src="{{ static_design_url }}/common/images/logo_domogik.png" alt="Domogik logo" /></a>
+        <a href="{% url "index_view" %}" id="logo"><img src="{{ static_design_url }}/common/images/logo_domogik.png" alt="Domogik logo" /></a>
         <div id="title">{% trans "Domogik" %} <span id="subtitle">{% trans "Free home automation under Linux" %}</span> </div>
     </header>
     <nav id="nav1">
         <ul>
-            <li><a href="{% url page_view %}" class="{{ nav1_show }}">{% trans "Visualization" %}<span class='description'>{% trans "View, Control your house" %}</span></a></li>
-            <li><a href="{% url admin_index_view %}" class="{% if not is_user_connected %}admin_required {% endif %}{{ nav1_admin }}">{% trans "Administration" %}<span class='description'>{% trans "Configure, Manage" %}</span></a></li>
+            <li><a href="{% url "page_view" %}" class="{{ nav1_show }}">{% trans "Visualization" %}<span class='description'>{% trans "View, Control your house" %}</span></a></li>
+            <li><a href="{% url "admin_index_view" %}" class="{% if not is_user_connected %}admin_required {% endif %}{{ nav1_admin }}">{% trans "Administration" %}<span class='description'>{% trans "Configure, Manage" %}</span></a></li>
             <li class='help'><a href="http://wiki.domogik.org/End_user_documentation" target='_blank'>{% trans "Help" %}<span class='description'>{% trans "External Wiki page" %}</span></a></li>
             <li class="login">
                 {% if not is_user_connected %}
-                    <a href="{% url login_view %}">{% trans "Log in" %}<span class='description'>{% trans "Identify yourself" %}</span></a>
+                    <a href="{% url "login_view" %}">{% trans "Log in" %}<span class='description'>{% trans "Identify yourself" %}</span></a>
                 {% else %}
-                    <a href="{% url logout_view %}">{% trans "Log out" %}<span class='description'>{% trans "Disconnect" %} {{ request.session.user.first_name }} ({{ request.LANGUAGE_CODE }})</span></a>
+                    <a href="{% url "logout_view" %}">{% trans "Log out" %}<span class='description'>{% trans "Disconnect" %} {{ request.session.user.first_name }} ({{ request.LANGUAGE_CODE }})</span></a>
                 {% endif %}
             </li>
         </ul>
@@ -92,12 +92,12 @@
             <nav id="nav2">
                 <div class="subnav2"><a href="#">{% trans "Organization" %}</a></div>
                 <ul>
-                    <li><a href="{% url admin_organization_devices_view %}" class='{{ nav2_organization_devices }}'>{% trans "Devices" %}</a></li>
-                    <li><a href="{% url admin_organization_pages_view %}" class='{{ nav2_organization_pages }}'>{% trans "Pages" %}</a></li>
+                    <li><a href="{% url "admin_organization_devices_view" %}" class='{{ nav2_organization_devices }}'>{% trans "Devices" %}</a></li>
+                    <li><a href="{% url "admin_organization_pages_view" %}" class='{{ nav2_organization_pages }}'>{% trans "Pages" %}</a></li>
                 </ul>
                 <div class="subnav2"><a href="#">{% trans "Management" %}</a></div>
                 <ul>
-                    <li><a href="{% url admin_management_accounts_view %}" class='{{ nav2_management_accounts }}'>{% trans "Accounts" %}</a></li>
+                    <li><a href="{% url "admin_management_accounts_view" %}" class='{{ nav2_management_accounts }}'>{% trans "Accounts" %}</a></li>
                 </ul>
                 <div class="subnav2"><a href="#">{% trans "Plugins" %}</a></div>
                 <ul id="plugins_list">
@@ -109,12 +109,12 @@
                 {% endif %}
                 <div class="subnav2"><a href="#">{% trans "Core" %}</a></div>
                 <ul>
-                    <li><a href="{% url admin_core_helpers_view %}" class='icon32-menu-helpers {{ nav2_tools_helpers }}'>{% trans "Helpers" %}</a></li>
-                    <li><a href="{% url admin_core_rinor_view %}" class='icon32-menu-rinor {{ nav2_tools_rinor }}'>{% trans "RINOR" %}</a></li>
-                    <li><a href="{% url admin_core_pyinfo_view %}" class='icon32-menu-pyinfo {{ nav2_tools_pyinfo }}'>{% trans "Python" %}</a></li>
-                    <li><a href="{% url admin_core_djangoinfo_view %}" class='icon32-menu-djangoinfo {{ nav2_tools_djangoinfo }}'>{% trans "Django" %}</a></li>
-                    <li><a href="{% url admin_core_domowebdata_view %}" class='icon32-menu-domowebdata {{ nav2_tools_domowebdata }}'>{% trans "Domoweb Data" %}</a></li>
-                    <li><a href="{% url admin_devicesstats_view %}" class='icon32-menu-devicesstats {{ nav2_tools_devicesstats }}'>{% trans "Devices Stats" %}</a></li>
+                    <li><a href="{% url "admin_core_helpers_view" %}" class='icon32-menu-helpers {{ nav2_tools_helpers }}'>{% trans "Helpers" %}</a></li>
+                    <li><a href="{% url "admin_core_rinor_view" %}" class='icon32-menu-rinor {{ nav2_tools_rinor }}'>{% trans "RINOR" %}</a></li>
+                    <li><a href="{% url "admin_core_pyinfo_view" %}" class='icon32-menu-pyinfo {{ nav2_tools_pyinfo }}'>{% trans "Python" %}</a></li>
+                    <li><a href="{% url "admin_core_djangoinfo_view" %}" class='icon32-menu-djangoinfo {{ nav2_tools_djangoinfo }}'>{% trans "Django" %}</a></li>
+                    <li><a href="{% url "admin_core_domowebdata_view" %}" class='icon32-menu-domowebdata {{ nav2_tools_domowebdata }}'>{% trans "Domoweb Data" %}</a></li>
+                    <li><a href="{% url "admin_devicesstats_view" %}" class='icon32-menu-devicesstats {{ nav2_tools_devicesstats }}'>{% trans "Devices Stats" %}</a></li>
                 </ul>
             </nav>
         </div>

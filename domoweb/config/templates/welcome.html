@@ -37,7 +37,7 @@
 {% block content %}
 
     <p>{% trans "Please choose your language in the dropdown list" %}</p>
-    <form action="{% url config_welcome_view %}" method="post">{% csrf_token %}
+    <form action="{% url "config_welcome_view" %}" method="post">{% csrf_token %}
     {{ form.non_field_errors }}
     {% for field in form %}
         <div class='row'>

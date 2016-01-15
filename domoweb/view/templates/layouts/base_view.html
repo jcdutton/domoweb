@@ -20,7 +20,7 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="{{LANGUAGE_CODE}}" manifest="{% url cache_manifest %}">
+<html lang="{{LANGUAGE_CODE}}" manifest="{% url "cache_manifest" %}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,7 +35,7 @@
 
 {% block global_css %}{% endblock %}
 {% block css %}{% endblock %}
-<script type="text/javascript" src="{% url django.views.i18n.javascript_catalog %}"></script>
+<script type="text/javascript" src="{% url "django.views.i18n.javascript_catalog" %}"></script>
 <script type="text/javascript" src="{{ static_design_url }}/libraries/jquery-1.7.1/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="{{ static_design_url }}/view/js/notifications.js"></script>
 <script type="text/javascript" src="{{ static_design_url }}/libraries/noty-v2.0.3/js/noty/jquery.noty.js"></script>

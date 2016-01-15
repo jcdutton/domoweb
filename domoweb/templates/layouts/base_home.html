@@ -35,13 +35,13 @@
 
 {% block body %}
     <header id="mainheader">
-        <a href="{% url index_view %}" id="logo"><img src="{{ static_design_url }}/common/images/logo_domogik.png" alt="{% trans "Domogik logo" %}" /></a>
+        <a href="{% url "index_view" %}" id="logo"><img src="{{ static_design_url }}/common/images/logo_domogik.png" alt="{% trans "Domogik logo" %}" /></a>
         <div id="title">{% trans "Domogik" %} <span id="subtitle">{% trans "Free home automation under Linux" %}</span> </div>
     </header>
     <nav id="nav1">
         <ul>
-            <li><a href="{% url view_index_view %}" class="{{ nav1_show }}">{% trans "Visualization" %}<span class='description'>{% trans "View, Control your house" %}</span></a></li>
-            <li><a href="{% url admin_index_view %}" class="{% if not is_user_connected %}admin_required {% endif %}{{ nav1_admin }}">{% trans "Administration" %}<span class='description'>{% trans "Configure, Manage" %}</span></a></li>
+            <li><a href="{% url "view_index_view" %}" class="{{ nav1_show }}">{% trans "Visualization" %}<span class='description'>{% trans "View, Control your house" %}</span></a></li>
+            <li><a href="{% url "admin_index_view" %}" class="{% if not is_user_connected %}admin_required {% endif %}{{ nav1_admin }}">{% trans "Administration" %}<span class='description'>{% trans "Configure, Manage" %}</span></a></li>
             <li class='help'><a href="http://wiki.domogik.org/End_user_documentation" target='_blank'>{% trans "Help" %}<span class='description'>{% trans "External Wiki page" %}</span></a></li>
         </ul>
     </nav>
