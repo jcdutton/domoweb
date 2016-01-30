@@ -1,0 +1,5 @@
+pip install South==1.0.2
+pip install django_tastypie==0.9.11
+pip install django==1.4
+pip install django_tables2==1.0.4
+
