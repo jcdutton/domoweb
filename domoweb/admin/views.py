@@ -458,7 +458,7 @@ def admin_core_devicesstats(request):
     page_title = _("Devices Stats Logs")
     
     devicesevents = StatePipe().get_last(100, '*', '*')
-    devicesevents.reverse()
+#    devicesevents.reverse()
     
     return go_to_page(
         request, 'core/devicesstats.html',
